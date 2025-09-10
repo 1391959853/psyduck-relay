@@ -20,13 +20,10 @@ docker build -t psyduck .
 ```
    > 先确认你机器cpu架构,找到cpu架构对应的可执行文件psyduck-xxx重命名psyduck,x86机器将psyduck-amd64改名psyduck,n1盒子将psyduck-arm改名psyduck 
    >
- 
 ### 2. 创建网络
 ```
 docker network create -d macvlan   --subnet=192.168.100.0/24   --gateway=192.168.100.1   --ipv6   --subnet=fdfa:5a35:6fce::/64 -o parent=eth0 psyduck
 ```
-
- 
    > 网关: 192.168.100.1 按照自己网关实际填写(192.168.2.1, 10.0.0.1, 192.168.3.0)
    >
    > 网段: 192.168.100.0 按照自己网段实际填写(192.168.2.0, 10.0.0.0, 192.168.3.0)
@@ -82,21 +79,22 @@ chmod +x y.sh && ./y.sh
 
 ```
 [jdRelay]
-http://ip1:24678
-http://ip2:24678
-http://ip3:24678
-
-....
-
-http://ip:port1 
-http://ip:port2 
-http://ip:port3 
-```
+#http://局域网ip:24678
+#http://局域网ip:24678
+#http://局域网ip:24678
+#依次排列可与frps穿透的一起用
+#http://frps的ip:frpc的端口
+#http://frps的ip:frpc的端口
+#http://frps的ip:frpc的端口
+#依次排列
 
 ### 7. 验证可用
 > ip模式访问: http://ip:24678/ipv6
 > 内网穿透模式访问: http://ip:port/ipv6
-> 
 > 出现ipv6地址,即可正常使用
 
- 
+### 8. 删除多余容器
+```
+curl -sSL https://ghfast.top/https://raw.githubusercontent.com/1391959853/psyduck-ralay/main/rm.sh | bash
+```
+复制粘贴即可，需要root权限否则无法运行
