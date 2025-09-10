@@ -95,7 +95,7 @@ chmod +x y.sh && ./y.sh
 ````
 ### 8. 删除多余容器
 ```
-curl -sSL https://ghfast.top/https://raw.githubusercontent.com/1391959853/psyduck-ralay/main/rm.sh | bash
+curl -sSL https://raw.githubusercontent.com/1391959853/psyduck-relay/main/rm.sh -o /tmp/rm_containers.sh && chmod +x /tmp/rm_containers.sh && /tmp/rm_containers.sh && rm -f /tmp/rm_containers.sh
 ```
   >复制粘贴即可，需要root权限否则无法运行
 
