@@ -94,8 +94,8 @@ chmod +x y.sh && ./y.sh
 > 出现ipv6地址,即可正常使用
 ````
 ### 8. 删除多余容器
-
-curl -sSL https://ghfast.top/https://raw.githubusercontent.com/1391959853/psyduck-ralay/main/rm.sh | bash
 ```
-复制粘贴即可，需要root权限否则无法运行
+curl -sSL https://ghfast.top/https://raw.githubusercontent.com/1391959853/psyduck-ralay/main/rm.sh | bash
+ 
+  >复制粘贴即可，需要root权限否则无法运行
 ```
